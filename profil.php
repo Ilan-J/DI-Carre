@@ -16,7 +16,7 @@ require_once('bdd.php');
     <?php
         include('head.php');
     ?>
-    <h1 id="title-jeu-videos">Profil</h1>
+    <h1 id="title-jeu-videos" class="title-page">Profil</h1>
     <main id="block-profile">
         <?php
             printOneUtilisateur();

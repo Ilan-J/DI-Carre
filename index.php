@@ -14,6 +14,7 @@
     <?php
         include('head.php');
     ?>
+    <main>
     <div id="block-main">
         <div id="presentation">
             <h2 class="title-page">Presentation</h2>
@@ -34,6 +35,7 @@
             <div class="nouvelle"><p>La renovation de notre site web est en cours 😀</p></div>
         </div>
     </div>
+    </main>
     <?php
         include("footer.html");
     ?>

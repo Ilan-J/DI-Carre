@@ -11,11 +11,11 @@
 </head>
 
 <body>
-<?php
-include('head.php');
-?>
-<main>
+    <?php
+    include('head.php');
+    ?>
     <h1 id="title-jeu-videos" class="title-page">Jeux Vidéos</h1>
+<main>
     <div id="jeu-demineur">
         <header>
             <h1>Jeu du demineur inversé</h1>

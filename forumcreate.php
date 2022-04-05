@@ -1,7 +1,5 @@
 <?php
 require_once('bdd.php');
-
-
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +22,9 @@ require_once('bdd.php');
             <h1>Forum</h1>
         </div>
         <div class="block-search">
-            <form class="rechercher" method="GET" action="rechercher.php">
-                <input type="text" placeholder="Rechercher">
-                <button class="style-button" type="submit">Q</button>
+        <form id="search" action="?id">
+                <input type="text" name="recherche" placeholder="Votre recherche" id="size-search"/>
+                <input class="style-button" type="image" src="images/iconSearch.svg" height="25px" width="5px"/>
             </form>
         </div>
         <div class="block-top">
@@ -39,8 +37,8 @@ require_once('bdd.php');
             </FORM>
         </div>
         <div class="block-top">
-            <div id="block-file">
-            <button type="button" onclick="window.location.href = 'forumcreate.php'">Créer un sujet</button>
+        <div id="block-file">
+                <button type="button" onclick="window.location.href = 'forumcreate.php'" class="button-di">CREER UN SUJET</button>
             </div>
         </div>
     </div>

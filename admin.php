@@ -20,7 +20,7 @@ require_once('bdd.php');
     <?php
         include('head.php');
     ?>
-    <h1 id="title-admin">Admin</h1>
+    <h1 id="title-admin" class="title-page">Admin</h1>
     <main>
         <div class="admin-user" id="block-admin-user">
             <h2>Utilisateurs</h2>
@@ -32,6 +32,7 @@ require_once('bdd.php');
                 <p>DESCRIPTION</p>
                 <h3>DATE DE NAISSANCE</h3>
                 <h3>DATE D'INSCRIPTION</h3>
+                <h3></h3>
             </div>
             <?php printutilisateur(); ?>
             </div>

@@ -8,11 +8,11 @@ body{
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 50px;
-    margin-bottom: 116px;
+    margin-bottom: 20px;
 }
 #title-contact{
+    margin-top: 20px;
     text-align: center;
-    padding-top: 80px;
     margin-bottom: 20px;
 }
 #block-contact-gauche{

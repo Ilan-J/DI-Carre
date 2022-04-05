@@ -19,18 +19,20 @@ require_once('bdd.php');
 
   ?>
   <h1 id="title-leaderboard" class="title-page">Leaderboard</h1>
-<div class="wrapper">
-    <div class="list">
-      <div class="list__header">
-        <h1>Demineur</h1>
-      </div>
-      <div class="list__body">
-        <table class="list__table">
-          <?php printleaderboard(1); ?>
-        </table>
+  <main>
+    <div class="wrapper">
+      <div class="list">
+        <div class="list__header">
+          <h1>Demineur</h1>
+        </div>
+        <div class="list__body">
+          <table class="list__table">
+            <?php printleaderboard(1); ?>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
   <?php
         include('footer.html');
     ?>

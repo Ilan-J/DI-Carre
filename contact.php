@@ -13,9 +13,9 @@
 <body>
   <?php
         include('head.php');
-    ?>
+  ?>
+  <h1 id="title-contact" class="title-page">Contact</h1>
   <main>
-    <h1 id="title-contact" class="title-page">Contact</h1>
     <div id="block-contacts">
     <div id="block-contact-gauche">
       <div id="mail">
@@ -32,6 +32,7 @@
           <p id="paragraphe-mail">ilan.jaglin@viacesi.fr</p>
         </a>
       </div>
+      <div class="separation-contact"></div>
       <div id="linkedin">
         <div id="image-link">
           <img id="image-linkedin"
