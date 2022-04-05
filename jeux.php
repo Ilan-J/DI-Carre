@@ -1,3 +1,6 @@
+<?php
+require_once('bdd.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,10 +14,10 @@
 </head>
 
 <body>
-    <?php
-    include('head.php');
-    ?>
-    <h1 id="title-jeu-videos" class="title-page">Jeux Vidéos</h1>
+<?php
+include('head.php');
+?>
+<h1 id="title-jeu-videos" class="title-page">Jeux Vidéos</h1>
 <main>
     <div id="jeu-demineur">
         <header>
@@ -49,6 +52,26 @@
             </div>
         </div>
         <p id='tries'></p>
+    </div>
+    <div id="jeu-lotterie">
+        <?php
+        $score = getScore();
+        ?>
+        <?php echo"<h1>Score Actuel : $score</h1>"?>
+        Bonjour et Bienvenue sur le jeu de la lotterie <br>
+        Le but est simple : vous commencez a 10 point, a chaque tour vous avez le choix entre :<br>
+        Tenter de gagner 5 points en appuyant sur +5 (chance : 8 / 10)<br>
+        Tenter de doubler la mise en appuyant sur DOUBLER (chance : 1 / 2)<br>
+        Tenter de Tripler en appuyant sur Tripler (chance : 1 / 3)<br>
+        Tenter de x100 en appuyant sur x100 (chance : 1 / 20)<br>
+
+        Bonne chance
+        <form action='sendgamescore.php' method='post'>
+            <button name='button' type='submit' value='+5'>+5</button>
+            <button name='button' type='submit' value='doubler'>Doubler</button>
+            <button name='button' type='submit' value='x3'>Tripler</button>
+            <button name='button' type='submit' value='x100'>x100</button>
+        </form>
     </div>
     <div id="block-jeu-ligne1" class="block-jeu-ligne">
         <div class="block-jeu">
