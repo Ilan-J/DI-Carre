@@ -40,7 +40,7 @@ require_once('bdd.php');
         </div>
         <div class="block-top">
             <div id="block-file">
-            <button type="button" onclick="window.location.href = 'forumcreate.php'" class="button-di">Créer un sujet</button>
+            <button type="button" onclick="window.location.href = 'forumcreate.php'" class="button-di">CREER UN SUJET</button>
             </div>
         </div>
     </div>

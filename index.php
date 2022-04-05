@@ -22,7 +22,7 @@
         
         <div id="jeu-principal">
             <img id="imgjeux" src="images/main-image-game.jpg" width="100%" height="80%" alt="Logo Groupe">
-            <button id="accesjeux" class="button-di">ACCEDER AUX JEUX</button>
+            <button id="accesjeux" class="button-di" onclick="window.location.href = 'jeux.php';" >ACCEDER AUX JEUX</button>
         </div>
 
         <div id="nouveautes">

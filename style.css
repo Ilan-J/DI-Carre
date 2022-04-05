@@ -501,6 +501,48 @@ header p{
     border: solid 1px black;
     background-color: white;
 }
+
+#separation-footer-main{
+    margin-bottom: 154px;
+}
+
+#form-modifier{
+    width: 40%;
+    font-size: 14px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#form-modifier > *{
+    width: 100%;
+    padding: 0;
+    height: 30px;
+}
+
+#form-modifier > textarea{
+    height: 200px;
+}
+
+#form-reponse{
+    width: 60%;
+    font-size: 14px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#form-reponse > *{
+    width: 100%;
+    padding: 0;
+    height: 30px;
+}
+
 @media (max-width: 1024px){
     .block-search{
         width: 100%;

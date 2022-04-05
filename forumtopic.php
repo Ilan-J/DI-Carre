@@ -41,7 +41,7 @@ require_once('bdd.php')?>
         </div>
         <div class="block-top">
             <div id="block-file">
-            <button type="button" onclick="window.location.href = 'forumcreate.php'" class="button-di">Créer un sujet</button>
+            <button type="button" onclick="window.location.href = 'forumcreate.php'" class="button-di">CREER UN SUJET</button>
             </div>
         </div>
     </div>
@@ -50,11 +50,11 @@ require_once('bdd.php')?>
             $id = $_GET['id'];
             printmsg($_GET['id'])
         ?>
-        <form id="formModifier" action="sendmsg.php" method="POST">
+        <form id="form-reponse" action="sendmsg.php" method="POST">
                 <input onFocus="this.blur()" name ="articleid" value ='<?php echo $id?>'>
                 <textarea name="msg" placeholder="Ecrire une réponse"></textarea>
                 <div id="validation">
-                    <input type="submit" class="btn" value="Poster"id="enregistrement"/>
+                    <input type="submit" class="btn" value="REPONDRE" id="enregistrement"/>
                 </div>
             </form>
     </main>

@@ -21,33 +21,34 @@ require_once('bdd.php');
     ?>
     <div id="block-haut-forum">
         <div class="block-top">
-            <h1>Forum</h1>
+            <h1 class="title-page">Forum</h1>
         </div>
         <div class="block-search">
-            <form class="rechercher" method="GET" action="rechercher.php">
-                <input type="text" placeholder="Rechercher">
-                <button class="style-button" type="submit">Q</button>
-            </form>
+        <form id="search" action="?id">
+            <input type="text" name="recherche" placeholder="Votre recherche" id="size-search"/>
+            <input class="style-button" type="image" src="images/iconSearch.svg" height="25px" width="5px"/>
+        </form>
         </div>
         <div class="block-top">
             <FORM id="list-deroul">
                 <SELECT name="nom" size="1">
                     <OPTION selected>Jeu
                     <OPTION> Demineur
-                    <OPTION> Morpion
+                    <OPTION> Loterie
                 </SELECT>
             </FORM>
         </div>
         <div class="block-top">
             <div id="block-file">
-            <button type="button" onclick="window.location.href = 'forumcreate.php'">Créer un sujet</button>
+            <button type="button" onclick="window.location.href = 'forumcreate.php'" class="button-di">CREER UN SUJET</button>
             </div>
         </div>
     </div>
     <main>
-    <form id="formModifier" action="sendforum.php?id=<?php $id?>" method="POST">
+    <form id="form-modifier" action="sendforum.php?id=<?php $id?>" method="POST">
         <select name="jeux" class="select">
              <option value='1' selected>Loterie</option>
+             <option value='2' >Demineur</option>
         </select>
         <input type="text" name="sujet" value="" placeholder="Sujet" required class="txtBox" />
         <textarea name="msg" placeholder="Ecrire une réponse"></textarea>
@@ -56,6 +57,9 @@ require_once('bdd.php');
         </div>
     </form>
     </main>
+    <div id="separation-footer-main">
+
+    </div>
   <?php
         include('footer.html');
     ?>
