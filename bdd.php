@@ -68,7 +68,7 @@ function printarticleAdmin() {
         </div>
         <div id='block-ligne2'>
             <div class='forum-qui'>Posté par : {$article['utilisateur_pseudo']}</div>
-            <div class='forum-quand'>Date création :{$article['article_date']}</div>
+            <div class='forum-quand'>Date création : {$article['article_date']}</div>
         </div>
         <div id='block-ligne3'>
             <div class='forum-quoi'>{$article['article_msg']}
@@ -107,7 +107,7 @@ function printmsgAdmin($idarticle) {
         </div>
         <div id='block-ligne2'>
             <div class='forum-qui'>Posté par : {$msg['utilisateur_pseudo']}</div>
-            <div class='forum-quand'>Date création :{$msg['msg_date']}</div>
+            <div class='forum-quand'>Date création : {$msg['msg_date']}</div>
         </div>
         <div id='block-ligne3'>
             <div class='forum-quoi'>{$msg['msg_msg']}
@@ -132,7 +132,7 @@ function printarticle() {
         </div>
         <div id='block-ligne2'>
             <div class='forum-qui'>Posté par : {$article['utilisateur_pseudo']}</div>
-            <div class='forum-quand'>Date création :{$article['article_date']}</div>
+            <div class='forum-quand'>Date création : {$article['article_date']}</div>
         </div>
         <div id='block-ligne3'>
             <div class='forum-quoi'>{$article['article_msg']}
@@ -158,7 +158,7 @@ function printOnearticle($id) {
         </div>
         <div id='block-ligne2'>
             <div class='forum-qui'>Posté par : {$article['utilisateur_pseudo']}</div>
-            <div class='forum-quand'>Date création :{$article['article_date']}</div>
+            <div class='forum-quand'>Date création : {$article['article_date']}</div>
         </div>
         <div id='block-ligne3'>
             <div class='forum-quoi'>{$article['article_msg']}
@@ -181,7 +181,7 @@ function printmsg($idarticle) {
         </div>
         <div id='block-ligne2'>
             <div class='forum-qui'>Posté par : {$msg['utilisateur_pseudo']}</div>
-            <div class='forum-quand'>Date création :{$msg['msg_date']}</div>
+            <div class='forum-quand'>Date création : {$msg['msg_date']}</div>
         </div>
         <div id='block-ligne3'>
             <div class='forum-quoi'>{$msg['msg_msg']}
@@ -263,7 +263,7 @@ function sendMsgForm($msg, $articleid) {
         </div>
         <div id='block-ligne2'>
             <div class='forum-qui'>Posté par : {$article['utilisateur_pseudo']}</div>
-            <div class='forum-quand'>Date création :{$article['article_date']}</div>
+            <div class='forum-quand'>Date création : {$article['article_date']}</div>
         </div>
         <div id='block-ligne3'>
             <div class='forum-quoi'>{$article['article_msg']}
@@ -391,6 +391,81 @@ function changeinfo($pseudo, $prenom, $nom, $datenaissance, $description) {
     $requete->BindValue('description', $description, PDO::PARAM_STR);
     $requete->BindValue('id', $userid, PDO::PARAM_INT);
     $requete->execute();
+
+}
+function GameAddScore($score){
+    $db = connect();
+    date_default_timezone_set('Europe/Paris');
+    $today = date('d/m/Y', time());
+    $id = $_SESSION['user']['key'];
+    $s = "INSERT INTO score (score_score,score_date,utilisateur_id,jeux_id)
+    VALUES(:score,:date,:usid,:jeuid)";
+    $req = $db->prepare($s);
+
+
+    $req->BindValue('date',$today,PDO::PARAM_STR);
+    $req->BindValue('usid',$id,PDO::PARAM_STR);
+    $req->BindValue('jeuid',1,PDO::PARAM_INT);
+    $req->execute();
+}
+
+function resetscore(){
+    $score = 10;
+    updatescore($score);
+}
+function doublescore(){
+    $score = getScore() * 2;
+    updatescore($score);
+}
+function plus5score() {
+    $score = getScore() + 5;
+    updatescore($score);
+}
+function triplescore() {
+    $score = getScore() * 3;
+    updatescore($score);
+}
+function x100score() {
+    $score = getScore() * 100;
+    updatescore($score);
+}
+function randompiece($max){
+    $random = rand(0, 100);
+    console.log($random);
+    if($random>=$max){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+function updatescore($score){
+    $id = $_SESSION['user']['key'];
+    date_default_timezone_set('Europe/Paris');
+    $today = date('d/m/Y', time());
+    $db = connect();
+    $s = "UPDATE score 
+            SET score_score = :score,
+                score_date = :date
+            WHERE utilisateur_id = :id;
+        ";
+    $req = $db->prepare($s);
+    $req->BindValue('id',$id,PDO::PARAM_INT);
+    $req->BindValue('score',$score,PDO::PARAM_INT);
+    $req->BindValue('date',$today,PDO::PARAM_STR);
+    $req->execute();
+}
+function getScore(){
+    $id = $_SESSION['user']['key'];
+    $db = connect();
+    $s = "SELECT * FROM score
+            WHERE utilisateur_id = :id;
+        ";
+    $req = $db->prepare($s);
+    $req->BindValue('id',$id,PDO::PARAM_INT);
+    $req->execute();
+    foreach ($req as $scorenow){
+        return $scorenow['score_score'];
+    }
 
 }
 /*
