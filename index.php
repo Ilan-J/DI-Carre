@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +16,11 @@
     ?>
     <div id="block-main">
         <div id="presentation">
+            <?php
+            if (isset($_SESSION['user']['key'])){
+                echo "<a href='deco.php'>Se deconnecter</a>";
+            }
+            ?>
             <h2>Presentation</h2>
             <div id="block-presentation-logo">
                 <div>Nous sommes des etudiants en Developpement Informatique Réalisant un projet de jeux, Venez découvrir notre selection de jeux moderne. N'hésitez pas à nous contacter pour :)</div>

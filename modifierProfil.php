@@ -1,3 +1,15 @@
+<?php
+session_start();
+require_once ('bdd.php');
+if(isset($_POST['Pseudo'])){
+    $pseudo = $_POST['Pseudo'];
+    $prenom = $_POST['Prenom'];
+    $nom = $_POST['Nom'];
+    $datenaissance = $_POST['datenaissance'];
+    $description = $_POST['text'];
+    changeinfo($pseudo, $prenom, $nom, $datenaissance, $description);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,11 +39,7 @@
                 <input type="submit" class="btn" value="Enregistrer" id="valide"/>
             </div>
             <form id="formModifier" action="" method="POST">
-                <input type="text" name="Pseudo" value="" placeholder="Pseudo" required class="txtBox" />
-                <input type="text" name="Prenom" value="" placeholder="Prénom" required class="txtBox"/>
-                <input type="text" name="Nom" value="" placeholder="Nom" required class="txtBox"/>
-                <input type="date" name="datenaissance" value=""/>
-                <textarea name="text" placeholder="Description" id="taille-text"></textarea>
+                <?php getInfo();?>
                 <div id="validation">
                     <input onclick="window.location.href = 'profil.php'" type="reset" class="btn" value="Annuler" id="annulation" class="valid-profil"/>
                     <input type="submit" class="btn" value="Enregistrer"id="enregistrement"/>

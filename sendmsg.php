@@ -5,10 +5,7 @@
     else{
       $msg = $_POST['msg'];
       $articleid = $_POST['articleid'];
-      //$utilisateurid = $_SESSION['utilisateur_id'];
-      $utilisateurid = 2;
-      echo $articleid;
-      sendMsgForm($msg,$articleid,$utilisateurid);
+      sendMsgForm($msg,$articleid);
     } 
   }
 ?>

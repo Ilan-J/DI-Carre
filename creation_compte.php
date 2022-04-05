@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_destroy();
 
 if(isset($_POST['username']) and isset($_POST['mail']) and isset($_POST['password']) and isset($_POST['repassword'])){
 
@@ -20,7 +19,7 @@ if(isset($_POST['username']) and isset($_POST['mail']) and isset($_POST['passwor
                 'pseudo' => $user['utilisateur_pseudo']
             ];
 
-            header('location:../Welcome/');
+            header('location:index.php');
             exit;
         } else {
             

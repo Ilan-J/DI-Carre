@@ -1,5 +1,7 @@
-<?php  
+<?php
+
 require_once('bdd.php');
+
 
 ?>
 
@@ -38,7 +40,7 @@ require_once('bdd.php');
         <div class="admin-user" id="block-admin-user">
             <h2>Forum</h2>
             <?php
-                $art = printarticle();
+                $art = printarticleAdmin();
             ?>
         </div>
     </main>

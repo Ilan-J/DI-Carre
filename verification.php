@@ -1,6 +1,4 @@
 <?php
-session_start();
-session_destroy();
 
 if(isset($_POST['username']) and isset($_POST['password'])){
     session_start();

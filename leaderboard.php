@@ -1,4 +1,6 @@
-<?php require_once('bdd.php'); ?>
+<?php
+require_once('bdd.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +16,7 @@
 <body>
   <?php
           include ('head.html');
+
   ?>
   <h1 id="title-leaderboard">Leaderboard</h1>
 <div class="wrapper">
