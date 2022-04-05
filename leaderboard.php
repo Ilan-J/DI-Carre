@@ -2,7 +2,7 @@
 require_once('bdd.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -15,10 +15,10 @@ require_once('bdd.php');
 
 <body>
   <?php
-          include ('head.html');
+          include('head.php');
 
   ?>
-  <h1 id="title-leaderboard">Leaderboard</h1>
+  <h1 id="title-leaderboard" class="title-page">Leaderboard</h1>
 <div class="wrapper">
     <div class="list">
       <div class="list__header">

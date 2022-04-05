@@ -1,30 +1,49 @@
+body{
+    margin: auto;
+}
+
 /* ----------------------------------- CONTACT --------------------------------------------*/
 #block-contacts{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 80px;
+    margin-top: 50px;
+    margin-bottom: 116px;
 }
 #title-contact{
     text-align: center;
-    font-size: 2em;
-    margin-top: 0;
     padding-top: 80px;
     margin-bottom: 20px;
 }
 #block-contact-gauche{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 40%;
 }
 .reseau{
+    color: black;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 100px;
+}
+
+.separation-contact{
+    background-color: black;
+    margin-left: 5%;
+    width: 60%;
+    height: 1px;
 }
 #linkedin{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     gap: 10%;
+}
+
+.reseau:hover{
+    color: #00834b;
 }
 #image-link{
     width: 22%;
@@ -35,6 +54,16 @@
 #membres-linkedin{
     width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#membres-linkedin p{
+    color: black;
+}
+#membres-linkedin p:hover{
+    color: #00834b;
 }
 
 /* ----- FORMULAIRE ---- */
@@ -45,93 +74,92 @@
     width: 100%;
     display: flex;
     text-align: center;
-  }
-  form{
+}
+form{
     max-width: 80%;
-    padding-top: 20px;
-  }
-  .feedback-input::placeholder{
-    color: white;
-  }
-  
-  .feedback-input {
-    color:white;
+}
+.feedback-input::placeholder{
+    color: black;
+}
+
+.feedback-input {
+    color:black;
     font-weight:500;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 5px;
     line-height: 22px;
-    background-color: transparent;
-    border:2px solid #ffffff;
+    background-color: white;
+    border:2px solid #000;
     transition: all 0.3s;
     padding: 13px;
     margin-bottom: 15px;
     width:100%;
     box-sizing: border-box;
     outline:0;
-  }
-  
-  
-  .feedback-input:focus { border:2px solid #003b32; }
-  
-  textarea {
+}
+
+
+.feedback-input:focus { border:2px solid #a71100; }
+
+textarea {
     height: 150px;
     line-height: 150%;
     resize:vertical;
-  }
-  
-  [type="submit"] {
+}
+
+[type="submit"] {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     width: 100%;
-    background:#003b32;
+    background:#a71100;
     border-radius:5px;
     border:0;
     cursor:pointer;
     color:white;
-    font-size:24px;
-    padding-top:10px;
-    padding-bottom:10px;
-    transition: all 0.3s;
+    font-size:18px;
+    padding-top:5px;
+    padding-bottom:5px;
+    transition: all 0.2s;
     margin-top:-4px;
     font-weight:700;
-  }
-  [type="submit"]:hover { background:#085e51; }
-  
-  @media (max-width:1024px){
+}
+[type="submit"]:hover { background:#00834b; }
+
+@media (max-width:1024px){
     #formulaire{
-      width: 100%;
+        width: 100%;
     }
     form{
-      max-width: 100%;
-      padding-top: 20px;
+        max-width: 100%;
+        padding-top: 20px;
     }
     #linkedin{
-      margin-top: 20px;
-      gap: 0px;
+        margin-top: 20px;
+        gap: 0px;
     }
     #block-contacts{
-      width: 90%;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      margin-bottom: 50px;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: 50px;
     }
     #image-link{
-      width: 100%;
+        width: 100%;
     }
     .reseau{
-      display: flex;
-      gap : 10px;
-      text-align: center;
-      align-items: center;
-      padding-left: 15%;
+        display: flex;
+        gap : 10px;
+        text-align: center;
+        align-items: center;
+        padding-left: 15%;
     }
     #block-contact-droite{
-      width: 100%;
+        width: 100%;
     }
     #block-contact-gauche{
-      width: 100%;
-      align-items: center;
-      text-align: center;
+        width: 100%;
+        align-items: center;
+        text-align: center;
     }
-  }
+}

@@ -20,15 +20,30 @@
                 <a class="topnav_link" href="forum.php">FORUM</a>
                 <a class="topnav_link" href="leaderboard.php">LEADERBOARD</a>
                 <a class="topnav_link" href="contact.php">CONTACT</a>
-                <a class="topnav_link" href="profil.php">PROFIL</a>
+                <?php
+                if (isset($_SESSION['user']['key'])){
+                    echo "<a class='topnav_link' href='profil.php'>PROFIL</a>";
+                }?>
                 <a class="topnav_link" href="admin.php">ADMIN</a>
             </nav>
+            <?php
+            if (isset($_SESSION['user']['key'])){
+                echo "<a href='deco.php' class='onglet'>
+                <div id='grid_connexion'>
+                    DECONNEXION
+                </div>
+            </a>";
 
-            <a href="connexion.html" class="onglet">
-                <div id="grid_connexion">
+            }else {
+                echo "
+                <a href='connexion.html' class='onglet'>
+                <div id='grid_connexion'>
                     CONNEXION
                 </div>
             </a>
+            ";
+            }
+            ?>
 
             <a id="topnav_hamburger_icon" href="javascript:void(0);" onclick="showResponsiveMenu()">
                 <!-- Some spans to act as a hamburger -->

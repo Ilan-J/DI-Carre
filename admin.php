@@ -6,7 +6,7 @@ require_once('bdd.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,7 @@ require_once('bdd.php');
 
 <body>
     <?php
-        include ('head.html');
+        include('head.php');
     ?>
     <h1 id="title-admin">Admin</h1>
     <main>

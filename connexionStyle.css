@@ -1,3 +1,7 @@
+body{
+    background-color: #0097A7;
+}
+
 #block-logo-connexion{
     width: 100%;
     display: flex;
@@ -7,6 +11,7 @@
 
 h2{
     text-align: center;
+    color: white;
 }
 
 #logo-connexion{
@@ -82,7 +87,7 @@ input[type=submit]:hover {
     input[type=text], input[type=password] {
         font-size: 25px;
     }
-    
+
     /* Set a style for all buttons */
     input[type=submit] {
         font-size: 25px;

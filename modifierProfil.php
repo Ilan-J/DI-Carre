@@ -8,10 +8,12 @@ if(isset($_POST['Pseudo'])){
     $datenaissance = $_POST['datenaissance'];
     $description = $_POST['text'];
     changeinfo($pseudo, $prenom, $nom, $datenaissance, $description);
+
+    header("location:profil.php");
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -23,7 +25,7 @@ if(isset($_POST['Pseudo'])){
 
 <body>
     <?php
-        include ('head.html');
+        include('head.php');
     ?>
     <h1 id="title-jeu-videos">Modifier le Profil</h1>
     <main id="block-profile">

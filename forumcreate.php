@@ -6,7 +6,7 @@ require_once('bdd.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,7 @@ require_once('bdd.php');
 
 <body>
   <?php
-        include ('head.html');
+        include('head.php');
     ?>
     <div id="block-haut-forum">
         <div class="block-top">
@@ -46,7 +46,7 @@ require_once('bdd.php');
         </div>
     </div>
     <main>
-    <form id="formModifier" action="sendforum.php?id=<?php $id?>" method="POST">
+    <form id="form-modifier" action="sendforum.php?id=<?php $id?>" method="POST">
         <select name="jeux" class="select">
              <option value='1' selected>Loterie</option>
         </select>
@@ -57,6 +57,8 @@ require_once('bdd.php');
         </div>
     </form>
     </main>
+  <div id="separation-footer-main">
+  </div>
   <?php
         include('footer.html');
     ?>

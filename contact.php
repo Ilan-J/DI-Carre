@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -15,10 +15,10 @@ session_start();
 
 <body>
   <?php
-        include ('head.html');
+        include('head.php');
     ?>
   <main>
-    <h1 id="title-contact">Contact</h1>
+    <h1 id="title-contact" class="title-page">Contact</h1>
     <div id="block-contacts">
     <div id="block-contact-gauche">
       <div id="mail">
