@@ -1,24 +1,53 @@
+* {
+    margin: 0;
+}
+
+html, body{
+    height: 100%;
+}
+button{
+    font-family: 'Roboto', sans-serif;
+}
 body{
-    background-color: #5384a2;
     margin: auto;
-    color: white;
+    background: rgb(233, 232, 232);
+    color: black;
 }
 a{
     text-decoration: none;
     color: white;
 }
+.button-di{
+    background-color: #a71100;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    border-radius: 7px;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px; */
+}
+.button-di:hover{
+    background-color: #00834b;
+}
 
-/* ----------------------------------- HEADER --------------------------------------------*/
+.title-page{
+    color: #00834b;
+    font-size: 28px;
+}
+/* ----------------------------------- MAIN --------------------------------------------*/
+
 #block-main{
     padding-top: 80px;
     display: flex;
     justify-content: space-around;
+    gap: 20px;
     height: 70vh;
-    margin-bottom: 35px;
+    margin-bottom: 70px;
 }
 
 #presentation{
-    width: 28%;
+    margin-top: 30px;
+    width: 20%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -32,29 +61,60 @@ a{
 }
 #block-presentation-logo div{
     padding-top: 15px;
-    width: 50%;
+    width: 100%;
 }
 
 #jeu-principal{
-    width: 35%;
+    width: 50%;
     margin-top: 30px;
     text-align: center;
+}
+#imgjeux{
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+#accesjeux{
+    font-size: 14px;
+    margin-top: 20px;
+    width: 30%;
+    height: 30px;
+    color: white;
 }
 
 #nouveautes{
-    width: 20%;
-    background-color: grey;
+    width: 16%;
+    color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     margin-top: 30px;
+    border: 1px solid black;
+    background-color: #8f8989;
+}
+#nouveautes h1{
+    font-size: 1.8em;
+}
+.separation-nouvelle{
+    height: 2px;
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
 }
 
 .nouvelle{
-    background-color: darkcyan;
     width: 90%;
+    font-size: 14px;
+    color: black;
     height: 30%;
     margin: auto;
+    box-shadow: 2px 2px 2px 2px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(233, 232, 232);
+}
+
+.nouvelle p{
+    padding: 10px;
 }
 
 @media (max-width: 1000px){
@@ -63,10 +123,12 @@ a{
         padding-top: 50px;
         margin-bottom: 20px;
         height: auto;
+        margin-left: 0;
     }
     #presentation{
         width: 90%;
         margin: auto;
+        margin-top: 20px;
     }
     #block-presentation-logo{
         display: flex;
@@ -79,41 +141,70 @@ a{
     #jeu-principal{
         width: 100%;
     }
-    
+    #accesjeux{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
     #nouveautes{
         width: 90%;
         margin: auto;
+        text-align: center;
         height: 250px;
         gap: 5px;
+    }
+
+    .nouvelle p{
+        text-align: center;
+        margin: auto;
     }
 }
 /* ----------------------------------- FOOTER --------------------------------------------*/
 #footer-block{
+    background-color: #0097A7;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: solid 1px rgba(0, 0, 0, 0.952);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
 }
 .block-footer{
-    width: 33%;
     display: flex;
     justify-content: center;
-    margin: auto;
 }
+.block-footer > div > a:hover{
+    color: #00834b;
+    text-shadow: 0.1px 0.1px 0.1px black;
+}
+#droit-footer{
+    margin-left: -10%;
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
 #block-membres{
     display: flex;
     text-align: center;
     align-items: center;
     gap: 15px;
 }
+
 #block-membres a{
     display: flex;
     text-align: center;
     align-items: center;
     gap: 5px;
+}
+#block-contact{
+    width: 12%;
+}
+#button-footer{
+    width: 60%;
 }
 .styled {
     border: 0;
@@ -124,29 +215,43 @@ a{
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: #5384a2;
+    background-color: #a71100;
     background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
+    rgba(0, 0, 0, .2),
+    rgba(0, 0, 0, .2) 30%,
+    rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
 }
 
 .styled:hover {
+    cursor: pointer;
     background-color: #022e49;
 }
 
 .styled:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-                inset 2px 2px 3px rgba(0, 0, 0, .6);
+    inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
 @media (max-width:1000px){
 
     #block-membres{
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
+    }
+    #footer-block{
+        flex-direction: column;
+        gap: 20px;
+    }
+    #droit-footer{
+        width: auto;
+    }
+    #button-footer{
+        width: 80%;
+    }
+    #block-contact{
+        width: 100%;
     }
 }
 /* ----------------------------------- JEUX -----------------------------------------------*/
@@ -154,27 +259,42 @@ a{
     margin-top: 0px;
     padding-top: 80px;
     text-align: center;
-    font-size: 2em;
 }
 
 .block-jeu-ligne{
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 .block-jeu{
-    width: 35%;
-    border: solid 2px #003b32;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 30%;
+    padding: 10px;
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1), 0px 5px 12px rgba(0, 0, 0, 0.07);
 }
-.block-jeu img{
-    width: 100%;
-}
+
 .jeu-paragraphe-bouton{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+.main-image-game{
+    height: 279px;
+    box-shadow: 0px 6px 12.5px rgba(0, 0, 0, 0.1), 0px 2px 6px rgba(0, 0, 0, 0.07);
+}
+.jeu-paragraphe-bouton p{
+    width: 82%;
+}
+.jeu-paragraphe-bouton button{
+    height: 40px;
+}
+.image-play{
+    width: 35px;
 }
 
 header h1{
@@ -236,7 +356,7 @@ header p{
     background: transparent;
     background-image: url('https://cdn.pixabay.com/photo/2017/01/31/16/59/bomb-2025548_1280.png');
     background-size: cover;
-    
+
 }
 
 .tile.empty {
@@ -247,7 +367,7 @@ header p{
 
 
 #tries {
-  text-align: center;
+    text-align: center;
 }
 @media (max-width: 1024px){
     .block-jeu-ligne{
@@ -273,8 +393,8 @@ header p{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    margin-bottom: 10px;
-    padding-top: 60px;
+    margin-bottom: 30px;
+    padding-top: 80px;
 }
 
 .block-top{
@@ -285,8 +405,17 @@ header p{
     width: 40%;
     text-align: center;
 }
+.style-button{
+    width: 10%;
+}
+#search{
+    display: flex;
+    align-items: center;
+}
+#size-search{
+    width: 60%;
+}
 .block-search > form > input{
-    width: 80%;
     font-size: 1.1em;
 }
 .block-search > form > button{
@@ -297,82 +426,132 @@ header p{
     font-size: 1.1em;
 }
 #block-file > button{
-    width: 40%;
     font-size: 1.1em;
 }
 .block-file-forum{
     width: 88%;
     margin: auto;
     margin-bottom: 40px;
-    border: solid 3px #000;
-    background-color: #003b32;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px, rgba(0, 0, 0, 0.4) 0px 6px 6px;
+    border-radius: 5px;
+    background-color: #8f8989;
     display: flex;
     flex-direction: column;
+    color: black;
 }
 #block-ligne1{
-    margin: 5px;
-    font-size: 1.3em;
+    margin: 10px;
+    font-size: 16px;
     display: flex;
-    gap: 2%;
+    gap: 3%;
 }
 #block-ligne2{
-    margin: 5px;
-    font-size: 1.3em;
+    margin: 10px;
+    font-size: 16px;
     display: flex;
-    gap: 2%;
+    gap: 3%;
 }
 #block-ligne3{
-    margin: 5px;
-    font-size: 1.3em;
+    margin: 10px;
+    font-size: 16px;
     display: flex;
-    gap: 2%;
+    gap: 3%;
 }
 .forum-sujet{
     padding: 7px;
-    width: 25%;
+    width: 40%;
     border: solid 1px black;
+    background-color: white;
 }
 .forum-id{
     padding: 7px;
-    width: 10%;
+    width: 15%;
     text-align: center;
     border: solid 1px black;
+    background-color: white;
 }
 .forum-nom-jeu{
     padding: 7px;
     width: 25%;
     text-align: center;
     border: solid 1px black;
+    background-color: white;
 }
 .forum-dernier-message{
     padding: 7px;
     width: 30%;
     text-align: center;
     border: solid 1px black;
+    background-color: white;
 }
 .forum-qui{
     padding: 7px;
-    width: 25%;
+    width: 20%;
     border: solid 1px black;
+    background-color: white;
 }
 .forum-quand{
     padding: 7px;
-    width: 25%;
+    width: 20%;
     border: solid 1px black;
+    background-color: white;
 }
 .forum-quoi{
     padding: 7px;
     border: solid 1px black;
+    background-color: white;
 }
+
+#separation-footer-main{
+    margin-bottom: 154px;
+}
+
+#form-modifier{
+    width: 40%;
+    font-size: 14px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#form-modifier > *{
+    width: 100%;
+    padding: 0;
+    height: 30px;
+}
+
+#form-modifier > textarea{
+    height: 200px;
+}
+
+#form-reponse{
+    width: 60%;
+    font-size: 14px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#form-reponse > *{
+    width: 100%;
+    padding: 0;
+    height: 30px;
+}
+
 @media (max-width: 1024px){
     .block-search{
         width: 100%;
         text-align: center;
     }
-    .block-search > form > input{
+    /* .block-search > form > input{
         width: 49%;
         margin-bottom: 4px;
-    }
+    } */
     #list-deroul > SELECT{
         width: 60%;
         margin-bottom: 4px;
@@ -388,6 +567,7 @@ header p{
     }
     #block-haut-forum{
         flex-direction: column;
+        gap: 7px;
     }
     .block-top{
         width: 100%;
@@ -395,6 +575,15 @@ header p{
     /* .block-top h1{
         padding-top: 60px;
     } */
+    #search{
+        justify-content: center;
+    }
+    #size-search{
+        width: 48%;
+    }
+    .style-button{
+        width: 10%;
+    }
 }
 /* ----------------------------------- PROFILE -------------------------------------------- */
 
@@ -402,7 +591,7 @@ header p{
     width: 50%;
     height: 400px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 97px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -414,6 +603,7 @@ header p{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 #block-image{
@@ -454,7 +644,7 @@ header p{
 }
 #annulation{
     width: 50%;
-    background:#003b32;
+    background:#a71100;
     border-radius:5px;
     border:0;
     cursor:pointer;
@@ -467,7 +657,7 @@ header p{
 
 #enregistrement{
     width: 50%;
-    background:#003b32;
+    background:#a71100;
     border-radius:5px;
     border:0;
     cursor:pointer;
@@ -480,7 +670,7 @@ header p{
 
 #valide{
     width: 100%;
-    background:#003b32;
+    background:#a71100;
     border-radius:5px;
     border:0;
     cursor:pointer;
@@ -491,7 +681,7 @@ header p{
 }
 
 #annulation:hover,#valide:hover,#enregistrement:hover{
-    background:#085e51;
+    background:#00834b;
 }
 /* #block-description{
     width: 100%;
@@ -504,37 +694,39 @@ header p{
 }
 #info-profil{
     display: flex;
+    font-size: 14px;
     flex-direction: column;
     gap: 5px;
     width: 60%;
 }
 
 #info-profil p{
-    font-size: 1.2em;
+    font-size: 16px;
     padding: 15px 0;
 }
 
 .style-info{
     margin: 10px 0;
     padding: 5px 0;
-    border: solid 1px white;
+    border: solid 1px black;
+    background-color: white;
 }
 
 .modif-profil{
     width: 100%;
     height: 7%;
-    background:#003b32;
+    background:#a71100;
     border-radius:5px;
     border:0;
     cursor:pointer;
     color:white;
-    font-size:1.2em;
+    font-size:16px;
     transition: all 0.3s;
     margin-top:-4px;
     font-weight:700;
 }
 .modif-profil:hover{
-    background:#085e51;
+    background:#00834b;
 }
 @media (max-width: 1000px){
     body{
@@ -570,35 +762,49 @@ header p{
     margin-top: 0px;
     padding-top: 80px;
     text-align: center;
-    font-size: 2em;
+    margin-bottom: 30px;
 }
 
 .admin-user{
-    width: 80%;
+    width: 85%;
+    color: black;
     margin: auto;
-    border: solid 1px black;
-    background: #003b32;
+    /* border: solid 1px black; */
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1), 0px 5px 12px rgba(0, 0, 0, 0.07);
+    background: #fff;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
 .admin-user h2{
     text-align: center;
+    color: white;
+    font-size: 20px;
     width: 100%;
-    background-color: rosybrown;
+    background-color: #005f64;
+    padding: 5px 0;
     margin: auto;
+    margin-bottom: 8px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .admin-user h3{
     width: 12%;
     margin: auto;
+    font-size: 16px;
 }
 .admin-user p{
     width: 40%;
     margin: auto;
 }
+#size-description{
+    font-weight: bold;
+}
 .admin-user img{
     width: 5%;
+    padding: 4px;
 }
 .info-user{
     display: flex;
