@@ -1,8 +1,7 @@
 <?php
-if(empty($_SESSION)) {
-    session_start();
+session_start();
 
-}
+
 function connect(){
     try{
         $db = new PDO('mysql:host=localhost;dbname=cubeweb;charset=utf8','root','');
@@ -63,8 +62,8 @@ function printarticleAdmin() {
             <div class='forum-id'>Id : {$article['article_id']}</div>
             <div class='forum-nom-jeu'>{$article['jeux_nom']}</div>
             <form action='senddeleteforum.php' method='post'>
-                <input type='submit' name='button' class = 'button'
-                        value='{$article['article_id']}'/>
+                
+                        <button name='button' type='submit' value='{$article['article_id']}'>Suprimer Forum</button>
             </form>
         </div>
         <div id='block-ligne2'>
@@ -73,6 +72,45 @@ function printarticleAdmin() {
         </div>
         <div id='block-ligne3'>
             <div class='forum-quoi'>{$article['article_msg']}
+            </div>
+        </div>
+    </div>
+    ";
+        printmsgAdmin($article['article_id']);
+    }
+}
+function deletemsg($id) {
+    $db = connect();
+    $s = "DELETE  from forum_msg
+    WHERE msg_id = :id;
+    ";
+    $requete = $db->prepare($s);
+    $requete->BindValue('id', $id, PDO::PARAM_STR);
+    $requete->execute();
+    header("location:admin.php");
+
+}
+function printmsgAdmin($idarticle) {
+    $db = connect();
+    $requete = "SELECT * FROM forum_msg
+    NATURAL JOIN utilisateur
+    where article_id = $idarticle;
+    ";
+    $listemsg = $db->query($requete)->fetchAll(PDO::FETCH_ASSOC);
+    foreach($listemsg as $msg){
+        echo "<div class='block-file-forum'>
+        <div id='block-ligne1'>
+            <div class='forum-id'>Id : {$msg['msg_id']}</div>
+            <form action='senddeletemsg.php' method='post'>
+                <button name='button' type='submit' value='{$msg['msg_id']}'>Suprimer message</button>
+            </form>
+        </div>
+        <div id='block-ligne2'>
+            <div class='forum-qui'>Posté par : {$msg['utilisateur_pseudo']}</div>
+            <div class='forum-quand'>Date création :{$msg['msg_date']}</div>
+        </div>
+        <div id='block-ligne3'>
+            <div class='forum-quoi'>{$msg['msg_msg']}
             </div>
         </div>
     </div>";
@@ -234,7 +272,18 @@ function sendMsgForm($msg, $articleid) {
     </div></a>";
     }
 }
+function deleteuser($id) {
+    $db = connect();
+    $s = "DELETE  from utilisateur
+    WHERE utilisateur_id = :id;
+    ";
+    $requete = $db->prepare($s);
+    $requete->BindValue('id', $id, PDO::PARAM_STR);
+    $requete->execute();
 
+    header("location:admin.php");
+
+}
 function printutilisateur() {
     $db = connect();
     $requete = "SELECT * FROM utilisateur 
@@ -250,6 +299,9 @@ function printutilisateur() {
         <p>{$user['info_description']}</p>
         <h3>{$user['info_date_naissance']}</h3>
         <h3>{$user['info_date_inscription']}</h3>
+        <form action='senddeleteuser.php' method='post'>
+                <button name='button' type='submit' value='{$user['utilisateur_id']}'>Suprimer profil</button>
+        </form>
     </div>
         ";
     }

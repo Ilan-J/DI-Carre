@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once ('bdd.php');
 if(isset($_POST['Pseudo'])){
     $pseudo = $_POST['Pseudo'];

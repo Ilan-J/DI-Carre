@@ -1,3 +1,7 @@
+<?php
+require_once ('bdd.php');
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +28,13 @@
                 if (isset($_SESSION['user']['key'])){
                     echo "<a class='topnav_link' href='profil.php'>PROFIL</a>";
                 }?>
-                <a class="topnav_link" href="admin.php">ADMIN</a>
+                <?php
+                if (isset($_SESSION['admin'])) {
+                    if ($_SESSION['admin']===1) {
+                        echo "<a class='topnav_link' href='admin.php'>ADMIN</a>";
+                    }
+                }
+                ?>
             </nav>
             <?php
             if (isset($_SESSION['user']['key'])){
