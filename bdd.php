@@ -341,6 +341,10 @@ function changeinfo($pseudo, $prenom, $nom, $datenaissance, $description) {
     $requete->execute();
 
 }
+/*
+function printAllmsg(){
+    foreach
+}*/
 
 
 /*
