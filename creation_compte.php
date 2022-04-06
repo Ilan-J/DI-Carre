@@ -11,6 +11,7 @@ if(isset($_POST['username']) and isset($_POST['mail']) and isset($_POST['passwor
 
         $user = register($_POST['username'], $_POST['mail'], $password);
 
+
         if($user){
             session_start();
 
@@ -19,7 +20,8 @@ if(isset($_POST['username']) and isset($_POST['mail']) and isset($_POST['passwor
                 'pseudo' => $user['utilisateur_pseudo']
             ];
 
-            header('location:index.php');
+            createGameLotterie();
+            header('location:profil.php');
             exit;
         } else {
             
@@ -31,5 +33,5 @@ if(isset($_POST['username']) and isset($_POST['mail']) and isset($_POST['passwor
         exit;
     }
 }
-header('location:index.php');
+header('location:profil.php');
 exit;

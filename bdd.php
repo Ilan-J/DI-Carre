@@ -274,6 +274,13 @@ function sendMsgForm($msg, $articleid) {
 }
 function deleteuser($id) {
     $db = connect();
+    $s1 = "DELETE  from score
+    WHERE utilisateur_id = :id;
+    ";
+    $re = $db->prepare($s1);
+    $re->BindValue('id', $id, PDO::PARAM_STR);
+    $re->execute();
+
     $s = "DELETE  from utilisateur
     WHERE utilisateur_id = :id;
     ";
@@ -284,14 +291,52 @@ function deleteuser($id) {
     header("location:admin.php");
 
 }
+function isAdmin() {
+    $id = $_SESSION['user']['key'];
+    $db = connect();
+    $sql = "SELECT * FROM admin WHERE `utilisateur_id` = :id";
+
+    $request = $db->prepare($sql);
+    $request->bindvalue(':id', $id, PDO::PARAM_INT);
+    $request->execute();
+    $return = $request->fetch();
+
+    if($return){
+        return 1;
+    }
+    return 0;
+}
+function isItAdmin($id) {
+    $db = connect();
+    $sql = "SELECT * FROM admin WHERE `utilisateur_id` = :id";
+
+    $request = $db->prepare($sql);
+    $request->bindvalue(':id', $id, PDO::PARAM_INT);
+    $request->execute();
+    $return = $request->fetch();
+
+    if($return){
+        return 1;
+    }
+    return 0;
+}
+function addAdmin($id) {
+    $db = connect();
+    $s = "INSERT INTO admin (utilisateur_id)
+    VALUES(:id)";
+    $req = $db->prepare($s);
+    $req->BindValue('id',$id,PDO::PARAM_INT);
+    $req->execute();
+}
 function printutilisateur() {
     $db = connect();
     $requete = "SELECT * FROM utilisateur 
     NATURAL JOIN info;";
     $listuser = $db->query($requete)->fetchAll(PDO::FETCH_ASSOC);
     foreach($listuser as $user){
-        //src = 
-        echo "<div class='info-user'>
+        $id = $user['utilisateur_id'];
+        if(isItAdmin($id)===0){
+            echo "<div class='info-user'>
         <img src='images/compte-utilisateur-1.png' alt='image utilisateur'>
         <h3>{$user['utilisateur_pseudo']}</h3>
         <h3>{$user['info_prenom']}</h3>
@@ -302,8 +347,35 @@ function printutilisateur() {
         <form action='senddeleteuser.php' method='post'>
                 <button name='button' type='submit' value='{$user['utilisateur_id']}'>Suprimer profil</button>
         </form>
+        <form action='sendAddAdmin.php' method='post'>
+                <button name='button' type='submit' value='{$user['utilisateur_id']}'>Add Admin</button>
+        </form>
+        
+       
     </div>
         ";
+        }
+        if(isItAdmin($id)===1){
+            echo "<div class='info-user'>
+        <img src='images/compte-utilisateur-1.png' alt='image utilisateur'>
+        <h3>{$user['utilisateur_pseudo']}</h3>
+        <h3>{$user['info_prenom']}</h3>
+        <h3>{$user['info_nom']}</h3>
+        <p>{$user['info_description']}</p>
+        <h3>{$user['info_date_naissance']}</h3>
+        <h3>{$user['info_date_inscription']}</h3>
+        <form action='senddeleteuser.php' method='post'>
+                <button name='button' type='submit' value='{$user['utilisateur_id']}'>Suprimer profil</button>
+        </form>
+        <form action='' method='post'>
+                <button id='dejaAdmin' name='button' type='submit' value=''>Admin</button>
+        </form>
+        
+       
+    </div>
+        ";
+
+        }
     }
 
 }
@@ -468,6 +540,40 @@ function getScore(){
     }
 
 }
+function createGameLotterie(){
+    // création table jeu
+    $id = $_SESSION['user']['key'];
+    $db = connect();
+    date_default_timezone_set('Europe/Paris');
+    $today = date('d/m/Y', time());
+    $sql1 = "INSERT INTO `score`(score_score, score_date, utilisateur_id, jeux_id)
+    VALUES (:score, :date, :id, :jeuxid)";
+
+    $req = $db->prepare($sql1);
+
+    $req->BindValue('score',10,PDO::PARAM_INT);
+    $req->BindValue('date',$today,PDO::PARAM_STR);
+    $req->BindValue('id',$id,PDO::PARAM_INT);
+    $req->BindValue('jeuxid',1,PDO::PARAM_INT);
+
+    $req->execute();
+}
+function adddate(){
+    $id = $_SESSION['user']['key'];
+    $db = connect();
+    date_default_timezone_set('Europe/Paris');
+    $today = date('d/m/Y', time());
+    $s = "UPDATE utilisateur
+            INNER JOIN info ON utilisateur.info_id = info.info_id 
+        SET 
+            info_derniere_connexion = :date
+        WHERE utilisateur_id = :id;
+            ";
+    $requete = $db->prepare($s);
+    $requete->BindValue('date', $today, PDO::PARAM_STR);
+    $requete->BindValue('id', $id, PDO::PARAM_INT);
+    $requete->execute();
+}
 /*
 function printAllmsg(){
     foreach
@@ -541,6 +647,7 @@ function register($pseudo, $mail, $password){
     date_default_timezone_set('Europe/Paris');
     $today = date('d/m/Y', time());
 
+    //cretaion table info
     $sql1 = "INSERT INTO `info`(info_nom, info_prenom, info_img, info_description, info_date_naissance, info_date_inscription) VALUES (:nom, :prenom, :img, :desc, :dates, :date_inscription)";
 
     $req = $db->prepare($sql1);
@@ -561,9 +668,6 @@ function register($pseudo, $mail, $password){
     foreach($lmax as $user) {
         $max = $user['info_id'];
     }
-
-
-
 
 
     $sql = "INSERT INTO `utilisateur`(`utilisateur_pseudo`, `utilisateur_mail`, `utilisateur_password`, `info_id`) VALUES (:pseudo, :mail, :password, :infoid)";
