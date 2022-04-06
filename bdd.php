@@ -56,7 +56,7 @@ function printarticleAdmin() {
     ";
     $listeforum = $db->query($requete)->fetchAll(PDO::FETCH_ASSOC);
     foreach($listeforum as $article){
-        echo "<div class='block-file-forum'>
+        echo "<div class='block-reponse-forum class='block-file-forum'>
         <div id='block-ligne1'>
             <div class='forum-sujet'>Sujet : {$article['article_sujet']}</div>
             <div class='forum-id'>Id : {$article['article_id']}</div>
@@ -150,7 +150,7 @@ function printOnearticle($id) {
     ";
     $listeforum = $db->query($requete)->fetchAll(PDO::FETCH_ASSOC);
     foreach($listeforum as $article){
-        echo "<a href='forumtopic.php?id={$article['article_id']}'><div class='block-file-forum'>
+        echo "<a href='forumtopic.php?id={$article['article_id']}'><div class='block-reponse-forum class='block-file-forum'>
         <div id='block-ligne1'>
             <div class='forum-sujet'>Sujet : {$article['article_sujet']}</div>
             <div class='forum-id'>Id : {$article['article_id']}</div>

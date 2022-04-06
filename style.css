@@ -36,7 +36,7 @@ a{
 }
 
 main{
-    min-height: 580px;
+    min-height: 610px;
 }
 /* ----------------------------------- MAIN --------------------------------------------*/
 
@@ -441,6 +441,17 @@ header p{
     flex-direction: column;
     color: black;
 }
+.block-reponse-forum{
+    width: 88%;
+    margin: auto;
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px, rgba(0, 0, 0, 0.4) 0px 6px 6px;
+    border-radius: 5px;
+    background-color: #02494a;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
 #block-ligne1{
     margin: 10px;
     font-size: 16px;
@@ -593,6 +604,7 @@ header p{
         width: 88%;
     }
 }
+
 /* ----------------------------------- PROFILE -------------------------------------------- */
 
 #block-profile{
