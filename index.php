@@ -19,7 +19,7 @@
         <div id="presentation">
             <h2 class="title-page">Presentation</h2>
             <div id="block-presentation-logo">
-                <div>Nous sommes des etudiants en Developpement Informatique Réalisant un projet de jeux. Ilan Jaglin, David Lansonneur et Ilan Loore, nous allons vous faire plonger dans un monde moderne avec des design à couper le soufle. Nous sommes heureux de vous présenter le futur site de jeux vidéo en ligne ! Venez découvrir notre selection de jeux moderne. N'hésitez pas à nous contacter pour en savoir davantage.😀</div>
+                <div>Nous sommes des Etudiants en Developpement Informatique Réalisant un projet de jeux. Ilan Jaglin, David Lansonneur et Ilan Loore, nous allons vous faire plonger dans un monde moderne avec des design à couper le soufle. Nous sommes heureux de vous présenter le futur site de jeux vidéo en ligne ! Venez découvrir notre selection de jeux moderne. N'hésitez pas à nous contacter pour en savoir davantage.😀</div>
             </div>
         </div>
 
