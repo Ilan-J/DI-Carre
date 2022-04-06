@@ -53,20 +53,22 @@ include('head.php');
         </div>
         <p id='tries'></p>
     </div>
-    <div id="jeu-lotterie">
-        <?php
-        $score = getScore();
-        ?>
-        <?php echo"<h1>Score Actuel : $score</h1>"?>
-        Bonjour et Bienvenue sur le jeu de la lotterie <br>
-        Le but est simple : vous commencez a 10 point, a chaque tour vous avez le choix entre :<br>
-        Tenter de gagner 5 points en appuyant sur +5 (chance : 8 / 10)<br>
-        Tenter de doubler la mise en appuyant sur DOUBLER (chance : 1 / 2)<br>
-        Tenter de Tripler en appuyant sur Tripler (chance : 1 / 3)<br>
-        Tenter de x100 en appuyant sur x100 (chance : 1 / 20)<br>
+    <div id="jeu-loterie">
+        <div id="titre-regle">
+            <?php $score = getScore();?>
+            <?php echo"<h2>Score Actuel : $score</h2>"?>
+        </div>
 
-        Bonne chance
-        <form action='sendgamescore.php' method='post'>
+        <div id="regle-loterie">
+            Bonjour et Bienvenue sur le jeu de la lotterie <br>
+            Le but est simple : vous commencez a 10 point, a chaque tour vous avez le choix entre :<br>
+            Tenter de gagner 5 points en appuyant sur +5 (chance : 8 / 10)<br>
+            Tenter de doubler la mise en appuyant sur DOUBLER (chance : 1 / 2)<br>
+            Tenter de Tripler en appuyant sur Tripler (chance : 1 / 3)<br>
+            Tenter de x100 en appuyant sur x100 (chance : 1 / 20)<br>
+            Bonne chance
+        </div>
+        <form action='sendgamescore.php' method='post' id="form-loterie">
             <button name='button' type='submit' value='+5'>+5</button>
             <button name='button' type='submit' value='doubler'>Doubler</button>
             <button name='button' type='submit' value='x3'>Tripler</button>

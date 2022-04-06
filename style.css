@@ -388,6 +388,43 @@ header p{
 #show-jeu{
     display: initial;
 }
+
+/* ----------------------------------- JEUX LOTERIE -------------------------------------*/
+
+#jeu-loterie{
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#regle-loterie{
+    width: 50%;
+    margin: auto;
+}
+
+#titre-regle{
+    text-align: center;
+}
+
+#form-loterie{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+}
+@media (max-width: 1024px){
+    #regle-loterie{
+        width: 100%;
+    }
+    #form-loterie{
+        width: 100%;
+    }
+}
 /* ----------------------------------- FORUM --------------------------------------------*/
 #block-haut-forum{
     display: flex;
@@ -837,7 +874,6 @@ header p{
 [type="submit"] {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     width: 100%;
-    height: 50px;
     background:#a71100;
     border-radius:5px;
     border:0;

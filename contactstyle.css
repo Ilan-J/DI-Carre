@@ -7,7 +7,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 #title-contact{
@@ -26,7 +26,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 100px;
+    gap: 120px;
 }
 
 .separation-contact{
