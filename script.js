@@ -50,15 +50,15 @@ function doClick(id) {
 
 function reset() {
   ready = true;
-  bombRow = Math.floor(4*Math.random()); // random row 0,1,2,3
-  bombColumn = Math.floor(4*Math.random()); // random column 0,1,2,3
+  bombRow = Math.floor(3*Math.random()); // random row 0,1,2,3
+  bombColumn = Math.floor(3*Math.random()); // random column 0,1,2,3
   tries = 0;
 
   console.log('The bomb is in tile #'+bombRow+'-'+bombColumn);
   
   document.querySelector('#tries').innerHTML='Find the bomb, quickly!';
-  for (let row=0; row < 4; row++) {
-    for (let col=0; col < 4; col++) {
+  for (let row=0; row < 3; row++) {
+    for (let col=0; col < 3; col++) {
       let tile = document.querySelector(`#tile-${row}-${col}`);
       tile.classList.remove('bomb');
       tile.classList.remove('empty');
@@ -66,8 +66,24 @@ function reset() {
   }
 }
 
-function cacahuette() {
-  document.querySelector('#jeu-demineur').style.display = 'initial';
+reset();
+
+/* ----------------------------- FENETRE MODALE LOTERIE--------------------------------- */
+
+function chargeModale(){
+  document.querySelector('.modale').style.display = 'initial';
 }
 
-reset();
+function closeModale(){
+  document.querySelector('.modale').style.display = 'none';
+}
+
+/* ----------------------------- FENETRE MODALE DEMINEUR --------------------------------- */
+
+function chargeModaleDemineur(){
+  document.querySelector('.modale-demineur').style.display = 'initial';
+}
+
+function closeModaleDemineur(){
+  document.querySelector('.modale-demineur').style.display = 'none';
+}

@@ -316,14 +316,16 @@ header p{
     flex-flow: column nowrap;
     gap: 10px;
     align-items: stretch;
-    max-width: 800px;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .row {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 10px;
 }
 
 .tile {
@@ -381,13 +383,6 @@ header p{
         margin: auto;
     }
 }
-*
-#jeu-demineur{
-    display: none;
-}
-#show-jeu{
-    display: initial;
-}
 
 /* ----------------------------------- JEUX LOTERIE -------------------------------------*/
 
@@ -424,6 +419,33 @@ header p{
     #form-loterie{
         width: 100%;
     }
+}
+/* ---------------------------------- FENETRE MODALE -----------------------------------*/
+.modale{
+    position: absolute;
+    margin-left: 9%;
+    z-index: 3;
+    width: 80%;
+    border: solid 1px black;
+    display: none;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px, rgba(0, 0, 0, 0.4) 0px 6px 6px;
+}
+.close-button{
+    float: right;
+    top: 0;
+    background-color: red;
+}
+
+.modale-demineur{
+    position: absolute;
+    margin-left: 9%;
+    z-index: 3;
+    width: 80%;
+    border: solid 1px black;
+    display: none;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px, rgba(0, 0, 0, 0.4) 0px 6px 6px;
 }
 /* ----------------------------------- FORUM --------------------------------------------*/
 #block-haut-forum{
