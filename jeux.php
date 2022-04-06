@@ -55,8 +55,12 @@ include('head.php');
     </div>
     <div id="jeu-loterie">
         <div id="titre-regle">
-            <?php $score = getScore();?>
-            <?php echo"<h2>Score Actuel : $score</h2>"?>
+            <?php
+            if(isset($_SESSION['user']['key'])){
+
+
+            $score = getScore();
+            echo"<h2>Score Actuel : $score</h2>"?>
         </div>
 
         <div id="regle-loterie">
@@ -74,6 +78,11 @@ include('head.php');
             <button name='button' type='submit' value='x3'>Tripler</button>
             <button name='button' type='submit' value='x100'>x100</button>
         </form>
+        <?php
+        }else{
+                echo "connectez vous pour jouer";
+        }
+        ?>
     </div>
     <div id="block-jeu-ligne1" class="block-jeu-ligne">
         <div class="block-jeu">
