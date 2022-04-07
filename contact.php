@@ -15,8 +15,11 @@
         include('head.php');
   ?>
   <h1 id="title-contact" class="title-page">Contact</h1>
+  <div style="display: flex; justify-content: center">
+      <a href="PDF_PHP" target="_blank"><button class="button-di">Generer présentation PDF</button></a>
+  </div>
   <main>
-    <div id="block-contacts">
+      <div id="block-contacts">
     <div id="block-contact-gauche">
       <div id="mail">
         <a href="mailto:david.lansonneur@viacesi.fr" class="reseau"><img src="images/icons8-mail-48.png"

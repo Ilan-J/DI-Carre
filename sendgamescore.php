@@ -30,6 +30,6 @@ if(isset($_POST)) {
             resetscore();
         }
     }
-    header("location:jeux.php");
+    header("location:jeux.php?id=1");
 }
 ?>

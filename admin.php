@@ -1,7 +1,9 @@
 <?php
 
 require_once('bdd.php');
-
+if(!isAdmin()){
+    header('location:index.php');
+}
 
 ?>
 
@@ -33,16 +35,24 @@ require_once('bdd.php');
                 <h3>DATE DE NAISSANCE</h3>
                 <h3>DATE D'INSCRIPTION</h3>
                 <h3></h3>
+                <img src="images/transparent.png" alt="image utilisateur">
             </div>
             <?php printutilisateur(); ?>
             </div>
         </div>
+        <div class="admin-user" id="block-admin-user">
+            <h2>Contact</h2>
+            <?php
+            printcontact();
+            ?>
 
+        </div>
         <div class="admin-user" id="block-admin-user">
             <h2>Forum</h2>
             <?php
                 $art = printarticleAdmin();
             ?>
+
         </div>
     </main>
     <?php

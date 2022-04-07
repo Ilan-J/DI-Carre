@@ -8,6 +8,7 @@ html, body{
 button{
     font-family: 'Roboto', sans-serif;
 }
+
 body{
     margin: auto;
     background: rgb(233, 232, 232);
@@ -36,7 +37,7 @@ a{
 }
 
 main{
-    min-height: 610px;
+    min-height: 557px;
 }
 /* ----------------------------------- MAIN --------------------------------------------*/
 
@@ -677,7 +678,7 @@ header p{
 }
 #block-image-info{
     width: 100%;
-    height: 100%;
+    height: 52%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1097,4 +1098,3 @@ header p{
   header{
     height: 56.8px;
   }
- 

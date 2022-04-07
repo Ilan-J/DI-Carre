@@ -24,5 +24,5 @@ if(isset($_POST['username']) and isset($_POST['password'])){
         exit;
     }
 }
-header('location:profil.php');
+header('location:index.php');
 exit;

@@ -10,7 +10,30 @@ function connect(){
     }
     return $db;
 }
-
+function printcontact(){
+    $db = connect();
+    $requete = "SELECT * FROM contact
+NATURAL JOIN utilisateur
+";
+    $listecontact = $db->query($requete)->fetchAll(PDO::FETCH_ASSOC);
+    foreach($listecontact as $contact){
+        echo "<div class='block-reponse-forum' class='block-file-forum'>
+    <div id='block-ligne1'>
+        <div class='forum-sujet'>Nom: {$contact['contact_nom']}</div>
+        <div class='forum-id'>Mail : {$contact['contact_mail']}</div>
+        <div class = 'forum-nom-jeu'>{$contact['contact_date']}</div>
+        <div class = 'forum-nom-jeu'>User : {$contact['utilisateur_pseudo']}</div>
+        <form action='senddeletecontact.php' method='post'>
+            <button name='button' type='submit' value='{$contact['contact_id']}'>Suprimer message</button>
+        </form>
+    </div>
+    <div>   
+        <div id='block-ligne3' class='forum-quoi'>{$contact['contact_msg']}</div>
+</div>
+</div>
+";
+    }
+}
 function printleaderboard($id) {
     $db = connect();
     $requete = "SELECT * FROM score 
@@ -56,7 +79,7 @@ function printarticleAdmin() {
     ";
     $listeforum = $db->query($requete)->fetchAll(PDO::FETCH_ASSOC);
     foreach($listeforum as $article){
-        echo "<div class='block-reponse-forum class='block-file-forum'>
+        echo "<div class='block-reponse-forum' class='block-file-forum'>
         <div id='block-ligne1'>
             <div class='forum-sujet'>Sujet : {$article['article_sujet']}</div>
             <div class='forum-id'>Id : {$article['article_id']}</div>
@@ -78,6 +101,16 @@ function printarticleAdmin() {
     ";
         printmsgAdmin($article['article_id']);
     }
+}
+function deletecontact($id) {
+    $db = connect();
+    $s = "DELETE  from contact
+    WHERE contact_id = :id;
+    ";
+    $requete = $db->prepare($s);
+    $requete->BindValue('id', $id, PDO::PARAM_STR);
+    $requete->execute();
+
 }
 function deletemsg($id) {
     $db = connect();

@@ -57,7 +57,8 @@ include('head.php');
 
 
                 $score = getScore();
-                echo"<h2>Score Actuel : $score</h2>"?>
+                echo"<h2>Score Actuel : $score</h2>"
+                ?>
             </div>
             <div id="regle-loterie">
                 Bonjour et Bienvenue sur le jeu de la lotterie <br>
@@ -75,17 +76,18 @@ include('head.php');
                 <button name='button' type='submit' value='x100'>x100</button>
             </form>
             <?php
-            }else{
-                    echo "connectez vous pour jouer";
+            }else {
+                echo "connectez vous pour jouer";
             }
             ?>
+            </div>
         </div>
     </div>
     
     <div id="block-jeu-ligne1" class="block-jeu-ligne">
         <div class="block-jeu">
             <img src="images/demineur.png" alt="image d'un site web" class="main-image-game"/>
-            <h3>Demineur</h3>
+            <h3>Demineur inversé</h3>
             <div class="jeu-paragraphe-bouton">
                 <p>Decouvrez notre premier jeu, le Demineur ! Incroyablement intuitif et exeptionnel. Le gameplay est ahurissant.</p>
                 <button id="boutton-demineur" onclick="chargeModaleDemineur();"  href="#jeu-demineur" class="button-di">
@@ -107,6 +109,12 @@ include('head.php');
 </main>
 <?php
 include('footer.html');
+?>
+<?php
+if(isset($_GET["id"])){?>
+    <script src="scriptonload.js"></script>
+<?php
+}
 ?>
 </body>
 
