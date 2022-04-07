@@ -16,7 +16,7 @@
   ?>
   <h1 id="title-contact" class="title-page">Contact</h1>
   <div style="display: flex; justify-content: center">
-      <a href="PDF_PHP" target="_blank"><button class="button-di">Generer présentation PDF</button></a>
+      <a href="PDF_PHP" target="_blank"><button class="button-di" id="boutton-PDF">Generer présentation PDF</button></a>
   </div>
   <main>
       <div id="block-contacts">
